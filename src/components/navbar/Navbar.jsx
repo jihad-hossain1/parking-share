@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <main className="container mx-auto py-2 shadow-md sticky top-0 left-0 bg-purple-500">
+    <main className=" py-2 px-5 shadow-md fixed w-full bg-purple-500 rounded z-10">
       <div className="grid grid-flow-col justify-stretch items-center">
         <div>Parking Share</div>
         <div
