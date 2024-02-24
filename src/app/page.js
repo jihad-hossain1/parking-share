@@ -4,6 +4,7 @@ import Banner from "./banner/page";
 import Slogan from "./slogan/page";
 import PropertyType from "./propertyType/page";
 import Sponsors from "@/components/Sponsors/Sponsors";
+import Testemonial from "@/components/Testemonial/Testemonial";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <Slogan />
       <PropertyType />
       <Sponsors/>
+      <Testemonial/>
       {/* <Robin /> */}
     </>);
 };
