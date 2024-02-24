@@ -1,0 +1,57 @@
+
+.navigation-wrapper {
+    position: relative;
+  }
+  
+  .dots {
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+  }
+  
+  .dot {
+    border: 2px solid white;
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 4px;
+    cursor: pointer;
+  }
+  
+  .dot:focus {
+    outline: none;
+  
+  }
+  
+  .dot.active {
+    background: white;
+    transition: all;
+    transition-duration: 500ms;
+    padding: 5px;
+    align-items: center;
+    border: 2px solid white;
+  }
+  
+  .arrow {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    fill: #fff;
+    cursor: pointer;
+  }
+  
+  
+  .arrow--right {
+    left: auto;
+    right: -200px;
+  }
+  
+  .arrow--disabled {
+    fill: rgba(255, 255, 255, 0.5);
+  }
+  
