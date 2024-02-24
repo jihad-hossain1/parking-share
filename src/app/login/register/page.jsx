@@ -3,8 +3,7 @@ import React from "react";
 
 const RegisterPage = () => {
   return (
-    <div className="pt-20">
-      RegisterPage
+    <div className="pt-10">
       <RegisterForm />
     </div>
   );

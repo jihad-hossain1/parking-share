@@ -44,34 +44,94 @@ const UserForm = () => {
     }
   };
   return (
-    <div className="max-w-screen-sm mx-auto p-3">
-      <form action={handleLogin} className="flex flex-col gap-5 ">
-        <input
-          type="email"
-          className="bg-transparent border p-3 rounded"
-          name=""
-          value={email}
-          placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
-          id=""
-        />
+    <section className="">
+      <div className=" items-center px-5 py-12 lg:px-20 shadow-md ">
+        <div className="flex flex-col w-full max-w-md p-10 mx-auto my-6 transition duration-500 ease-in-out transform bg-white rounded-lg md:mt-0 border border-inherit">
+          <div>
+            <h2 className="mt-6 text-3xl font-extrabold text-neutral-600">
+              Sign in.
+            </h2>
+          </div>
+          <div className="mt-8">
+            <div className="mt-6">
+              <form onSubmit={handleLogin} className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-neutral-600"
+                  >
+                    {" "}
+                    Email address{" "}
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      name=""
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      autoComplete="email"
+                      required=""
+                      placeholder="Your Email"
+                      className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                    />
+                  </div>
+                </div>
 
-        <input
-          type="password"
-          className="bg-transparent border p-3 rounded"
-          name=""
-          value={password}
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-          id=""
-        />
-        <button type="submit">login</button>
-      </form>
+                <div className="space-y-1">
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium text-neutral-600"
+                  >
+                    {" "}
+                    Password{" "}
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      type="password"
+                      autoComplete="current-password"
+                      required=""
+                      placeholder="Your Password"
+                      className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center justify-start">
+                  <div className="flex items-center">
+                    <label
+                      htmlFor="remember-me"
+                      className="block ml-2 text-sm text-neutral-600"
+                    >
+                      {" "}
+                      Create an Account?{" "}
+                    </label>
+                  </div>
 
-      <div>
-        <Link href={"/login/register"}>go to register</Link>
+                  <div className="text-sm ml-1">
+                    <Link
+                      href="/login/register"
+                      className="font-medium text-blue-600 hover:text-blue-500"
+                    >
+                      {" "}
+                      Sign up{" "}
+                    </Link>
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75 flex items-center gap-2 justify-center"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

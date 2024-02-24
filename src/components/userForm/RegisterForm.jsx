@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import axios from "axios";
+import { signIn } from "next-auth/react";
 
 const RegisterForm = () => {
   const [fullname, setfullname] = useState("");
@@ -152,7 +153,7 @@ const RegisterForm = () => {
                     </label>
                   </div>
 
-                  <div className="text-sm">
+                  <div className="text-sm ml-1">
                     <Link
                       href="/login"
                       className="font-medium text-blue-600 hover:text-blue-500"
@@ -186,6 +187,7 @@ const RegisterForm = () => {
               <div>
                 <button
                   type="submit"
+                  onClick={() => signIn("google")}
                   className="w-full items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                 >
                   <div className="flex items-center justify-center">
