@@ -17,37 +17,37 @@ const districtsData = [
 ];
 
 const Robin = () => {
-    return (
-        <div className="container mx-auto">
-            <h1 className="text-4xl font-bold mb-4">Bangladesh Parking Districts</h1>
-            <div className="container mx-auto px-4 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {districtsData.map((district, index) => (
-                    <Link key={index} href={`/robin/${district?.district}`}>
-                        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <Image
-                                src={district?.image}
-                                alt={district?.district}
-                                width={300}
-                                height={200}
-                                layout="responsive"
-                                objectFit="cover"
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <h2 className="text-2xl font-semibold">{district.district}</h2>
-                                <p className="text-gray-600">
-                                    Total Parking Lots: {district.totalParkingLots}
-                                </p>
-                                <p className="text-gray-600">
-                                    Total Available Lots: {district.totalAvailableLots}
-                                </p>
-                            </div>
-                        </div>
-                    </Link>
-                ))}
+  return (
+    <div className="container mx-auto">
+      <h1 className="text-4xl font-bold mb-4">Bangladesh Parking Districts</h1>
+      <div className="container mx-auto px-4 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {districtsData.map((district, index) => (
+          <Link key={index} href={`/robin/${district?.district}`}>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <Image
+                src={district?.image}
+                alt={district?.district}
+                width={300}
+                height={200}
+                layout="responsive"
+                objectFit="cover"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h2 className="text-2xl font-semibold">{district.district}</h2>
+                <p className="text-gray-600">
+                  Total Parking Lots: {district.totalParkingLots}
+                </p>
+                <p className="text-gray-600">
+                  Total Available Lots: {district.totalAvailableLots}
+                </p>
+              </div>
             </div>
-        </div>
-    );
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Robin;
