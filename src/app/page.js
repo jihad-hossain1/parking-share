@@ -1,7 +1,13 @@
 import React from "react";
+import Robin from "./robin/page";
+import Banner from "./banner/page";
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <Banner />
+      {/* <Robin /> */}
+    </>);
 };
 
 export default HomePage;

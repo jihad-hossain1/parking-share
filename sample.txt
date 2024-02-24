@@ -1,0 +1,8 @@
+MONGODB_URI=mongodb+srv://love:dose@cluster0.jiipi5m.mongodb.net
+GOOGLE_ID=307857895929-9ml2mf1lue56evud9vktp36gieibv935.apps.googleusercontent.com
+GOOGLE_Secret=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
+GITHUB_ID=6f057ccc8545e4638bd6
+GITHUB_Secret=7878a697de6049ff8daeef10091d972fdb893672
+NEXTAUTH_SECRET=fasdfjhasdjfhklasjdflkasjdasdf
+NEXTAUTH_URL=http://localhost:3000
+NEXT_BASE_URL=http://localhost:3000/api/v1
