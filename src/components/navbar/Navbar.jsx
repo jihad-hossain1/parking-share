@@ -4,7 +4,8 @@ import { ThemeSwitchButton } from "./themeSwitch/ThemeSwitchButton";
 
 const Navbar = () => {
   return (
-    <main className="container mx-auto border py-2 shadow-sm">
+ <div className='shadow-sm sticky top-0 backdrop-blur-md'>
+     <div className="container mx-auto py-2 shadow-sm sticky top-0 backdrop-blur-md">
       <div className="flex justify-between items-center">
         <div>Parking Share</div>
         <div className="flex items-center gap-10">
@@ -16,7 +17,8 @@ const Navbar = () => {
           <ThemeSwitchButton />
         </div>
       </div>
-    </main>
+    </div>
+ </div>
   );
 };
 
