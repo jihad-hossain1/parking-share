@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import axios from "axios";
 import { signIn } from "next-auth/react";
+import { FcGoogle } from "react-icons/fc";
 
 const RegisterForm = () => {
   const [fullname, setfullname] = useState("");
@@ -191,6 +192,7 @@ const RegisterForm = () => {
                   className="w-full items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                 >
                   <div className="flex items-center justify-center">
+                    <FcGoogle size={20} />
                     <span className="ml-4"> Log in with Google</span>
                   </div>
                 </button>
