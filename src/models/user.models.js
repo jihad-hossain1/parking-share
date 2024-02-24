@@ -12,14 +12,18 @@ const userSchema = new Schema(
     fullname: {
       type: String,
     },
-    password: {
-      type: String,
-      required: true,
-    },
     email: {
       type: String,
       required: true,
       unique: true,
+    },
+    role: {
+      type: String,
+      enum: ["user", "client", "admin"],
+      default: "user",
+    },
+    image: {
+      type: String,
     },
   },
   {

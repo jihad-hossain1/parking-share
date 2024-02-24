@@ -23,23 +23,46 @@ export const options = {
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_Secret,
     }),
-    GoogleProvider({
-      profile(profile) {
-        console.log("Profile Google: ", profile);
 
-        let userRole = "Google User";
-        if (profile?.email == "jihadkhan934@gmail.com") {
-          userRole = "admin";
+    GoogleProvider({
+      profile: async (profile) => {
+        console.log("Profile Google: ", profile);
+        const foundUser = await User.findOne({ email: profile?.email })
+          .lean()
+          .exec();
+
+        if (!foundUser) {
+          const savedOnDatabase = new User({
+            fullname: profile?.name,
+            image: profile?.picture,
+            email: profile?.email,
+          });
+          await savedOnDatabase.save();
+          console.log("user form database: ", savedOnDatabase);
         }
+
+        // let userRole = "Google User";
+        // if (profile?.email == "jihadkhan934@gmail.com") {
+        //   userRole = "admin";
+        // }
+        console.log("user are already exist ", {
+          ...profile,
+          id: foundUser?._id,
+          role: foundUser?.role,
+          email: foundUser?.email,
+          image: foundUser?.image,
+        });
         return {
           ...profile,
-          id: profile.sub,
-          role: userRole,
+          id: foundUser?._id,
+          role: foundUser?.role,
+          email: foundUser?.email,
         };
       },
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_Secret,
     }),
+
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -59,7 +82,7 @@ export const options = {
           const foundUser = await User.findOne({ email: credentials.email })
             .lean()
             .exec();
-
+          console.log(foundUser);
           if (foundUser) {
             console.log("User Exists");
             const match = await bcrypt.compare(
@@ -82,11 +105,13 @@ export const options = {
       },
     }),
   ],
+
   callbacks: {
     async jwt({ token, user }) {
       if (user) token.role = user.role;
       return token;
     },
+
     async session({ session, token }) {
       if (session?.user) session.user.role = token.role;
       return session;
