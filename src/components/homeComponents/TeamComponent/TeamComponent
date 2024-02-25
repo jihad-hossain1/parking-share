@@ -1,0 +1,46 @@
+"use client";
+
+import { OurTeam } from "../../../components/homeComponents/OurTeam/OurTeam.jsx";
+const people = [
+  {
+    id: 3,
+    name: "Jane Smith",
+    designation: "Data Scientist",
+    image:
+      "https://i.ibb.co/2gW4Cv2/2148859448.jpg",
+  },
+  {
+    id: 4,
+    name: "Emily Davis",
+    designation: "UX Designer",
+    image:
+      "https://i.ibb.co/qRbv48f/2148029483.jpg",
+  },
+  {
+    id: 5,
+    name: "Tyler Durden",
+    designation: "Soap Developer",
+    image:
+      "https://i.ibb.co/WKGrmX9/255.jpg",
+  }
+];
+
+// export function TeamComponent() {
+//   return (
+//     <div className="flex flex-row items-center justify-center mb-10 w-full">
+//       {/* <OurTeam items={people}/> */}
+//     </div>
+//   );
+// }
+
+
+
+function TeamComponent() {
+  return (
+    <div className="flex flex-row items-center justify-center mb-10 w-full">
+    {/* <OurTeam items={people}/> */}
+  </div>
+  )
+}
+
+export default TeamComponent
