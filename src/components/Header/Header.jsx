@@ -23,7 +23,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-5 mt-5">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-5 mt-5 mx-2 md:mx-0">
         <HeaderCard
           icons={<MdOutlinePayment size={50} />}
           title={"Save Money"}

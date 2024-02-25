@@ -22,7 +22,7 @@ const HeaderFilter = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <form action="" className="flex items-center justify-center divide-x w-1/2" onSubmit={handleSubmit(onSubmit)}>
+    <form action="" className="flex flex-col md:flex-row items-center gap-1 justify-center w-1/2" onSubmit={handleSubmit(onSubmit)}>
       <Select {...register("carCategory")} >
         <SelectTrigger className="  bg-white text-black rounded-none border-none">
           <SelectValue placeholder="Car Category" />
