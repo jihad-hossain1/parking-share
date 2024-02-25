@@ -3,7 +3,7 @@ import React from "react";
 
 const Location = () => {
   return (
-    <div>
+    <div className="pt-20">
       <LocationTable />
     </div>
   );
