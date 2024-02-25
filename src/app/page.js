@@ -1,10 +1,10 @@
 import React from "react";
 import Robin from "./robin/page";
-import Home from "@/components/Home/Home";
+import Header from "@/components/Header/Header";
 
 const HomePage = () => {
   return <div>
-    <Home/>
+    <Header/>
     <Robin />
   </div>;
 };
