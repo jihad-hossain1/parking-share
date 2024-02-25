@@ -11,14 +11,14 @@ const Header = () => {
       >
         <div className="container w-full flex items-center justify-center flex-col min-h-[60vh]">
           <div className="flex flex-col gap-2 items-center justify-center">
-            <h1 className="text-6xl font-bold text-center text-black dark:text-white">
+            <h1 className="text-5xl md:text-6xl font-bold text-center text-black dark:text-white drop-shadow-xl">
               Parking Never been easier than this in Bangladesh
             </h1>
-            <p className="text-center text-2xl">
+            <p className="text-center text-base lg:text-2xl drop-shadow-xl">
               We provide best parking experience
             </p>
           </div>
-          <div className="flex items-center justify-center w-full">
+          <div className="flex items-center justify-center w-full mt-2">
             <HeaderFilter />
           </div>
         </div>
