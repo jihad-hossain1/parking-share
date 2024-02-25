@@ -11,6 +11,15 @@ const GET_DIVISIONS = gql`
     }
   }
 `;
+const GET_DIVISIONS_FOR_FILTER = gql`
+  #graphql
+  query divisions {
+    divisions {
+      id
+      name
+    }
+  }
+`;
 
 const GET_DIVISION = gql`
   #graphql
@@ -23,5 +32,21 @@ const GET_DIVISION = gql`
     }
   }
 `;
+const GET_DISTRICT_BY_DIVISIONID = gql`
+  #graphql
+  query getDistrictByDivisionId($name: String!) {
+    getDistrictByDivisionId(name: $name) {
+      id
+      name
+      about
+      name
+    }
+  }
+`;
 
-export { GET_DIVISIONS, GET_DIVISION };
+export {
+  GET_DIVISIONS,
+  GET_DIVISION,
+  GET_DIVISIONS_FOR_FILTER,
+  GET_DISTRICT_BY_DIVISIONID,
+};

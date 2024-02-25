@@ -44,7 +44,7 @@ const Navbar = () => {
           {navList.map((menu, index) => (
             <li key={index}>{menu}</li>
           ))}
-          <ThemeSwitchButton />
+          {/* <ThemeSwitchButton /> */}
           <UserAccount />
         </ul>
       </div>
