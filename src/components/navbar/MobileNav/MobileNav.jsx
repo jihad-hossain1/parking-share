@@ -1,37 +1,49 @@
-import React from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { MdMenu } from "react-icons/md";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
-
+import { ThemeSwitchButton } from "../themeSwitch/ThemeSwitchButton";
+import UserAccount from "../account/UserAccount";
+import { GiSplitCross } from "react-icons/gi";
+import { GiHamburgerMenu } from "react-icons/gi";
 const MobileNav = () => {
-  return (
-    // <div className="absolute z-20">
+  const [openNav, setOpenNav] = useState(false);
 
-    // </div>
-    <DropdownMenu>
-      {/* <DropdownMenuTrigger className="border-none outline-none">
-      </DropdownMenuTrigger> */}
-      <MdMenu size={30} className="mt-1" />
-      <DropdownMenuContent className='bg-white text-black dark:bg-black shadow-xl border-none dark:text-white' >
-        <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link href={"/"}>Home</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href={"/"}>About</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href={"/"}>Become Client</Link>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+  const navList = [
+    <Link key={0} href={"/"}>
+      Home
+    </Link>,
+    <Link key={1} href={"/"}>
+      About
+    </Link>,
+    <Link key={2} href={"/"}>
+      Become Client
+    </Link>,
+  ];
+
+  return (
+    <>
+      <div
+        onClick={() => setOpenNav(!openNav)}
+        className="text-2xl absolute right-8 cursor-pointer block md:hidden text-white"
+      >
+        {openNav ? (
+          <GiSplitCross />
+        ) : (
+          <GiHamburgerMenu />
+        )}
+
+      </div>
+      <ul
+        className={`md:flex md:items-center gap-10 md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] top-9 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out ${openNav ? "top-2 opacity-100 bg-white lg:bg-none w-full h-auto rounded mx-auto" : "top-[-5px] md:opacity-100 opacity-0"
+          }`}
+      >
+        {navList.map((menu, index) => (
+          <li className="my-10 lg:my-0 font-bold text-black lg:text-white" key={index}>{menu}</li>
+        ))}
+        <ThemeSwitchButton />
+        <UserAccount />
+      </ul>
+    </>
   );
 };
 
