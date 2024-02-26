@@ -6,6 +6,7 @@ import PropertyType from "./propertyType/page";
 import Sponsors from "@/components/Sponsors/Sponsors";
 import Testemonial from "@/components/Testemonial/Testemonial";
 import AllDivisions from "./divisions/AllDivisions";
+import ContactUs from "./contactUs/page";
 
 const HomePage = () => {
   return (
@@ -13,9 +14,10 @@ const HomePage = () => {
       <Banner />
       <Slogan />
       <PropertyType />
-      <Sponsors/>
-      <Testemonial/>
+      <Sponsors />
+      <Testemonial />
       <AllDivisions />
+      <ContactUs />
       {/* <Robin /> */}
     </>);
 };
