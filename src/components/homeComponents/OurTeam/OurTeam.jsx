@@ -4,7 +4,7 @@ import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 function OurTeam() {
   return (
     <div className="w-full">
-      <p className="text-center mt-[8%] lg:text-5xl md:text-5xl text-3xl font-semibold lg:w-full md:w-full w-[80%] mx-auto"><span className="text-[#4CB9E7]">Meet</span> Our <span className="text-[#4CB9E7]">Team</span> Members</p>
+      <p className="text-center mt-[8%] lg:text-5xl md:text-5xl text-3xl font-normal lg:w-full md:w-full w-[80%] mx-auto"><span className="text-[#4CB9E7]">Meet</span> Our <span className="text-[#4CB9E7]">Team</span> Members</p>
       <div className="grid lg:grid-cols-3 md:grid-cols-3 gap-5 my-[8%] lg:mx-[10%]">
         {Members.map((member, indx) => (
           <div
