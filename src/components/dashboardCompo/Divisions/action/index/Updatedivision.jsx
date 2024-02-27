@@ -59,7 +59,7 @@ const Updatedivision = ({ division }) => {
     if (error) {
       console.log("error: ");
     }
-  }, [errors]);
+  }, [errors, error]);
   // console.log(error);
   return (
     <>

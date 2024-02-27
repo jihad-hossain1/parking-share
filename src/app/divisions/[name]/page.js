@@ -35,7 +35,7 @@ const District = ({ params }) => {
         <Image
           src={data.division.image}
           alt={data.division.name}
-          width={300}
+          width={4000}
           height={300}
           className="w-full h-[480px] object-cover"
         ></Image>
@@ -75,7 +75,7 @@ const District = ({ params }) => {
                   <p>{district.bn_name}</p>
                 </div>
                 <div className="mt-5 ml-auto">
-                    <button>View Detail</button>
+                  <button>View Detail</button>
                 </div>
               </div>
             </div>
