@@ -28,14 +28,14 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          // enableSystem
           disableTransitionOnChange
         >
           <AuthProvider>
             <Navbar />
             <main>{children}</main>
-            <Footer/>
+            <Footer />
             <Toaster />
           </AuthProvider>
         </ThemeProvider>
