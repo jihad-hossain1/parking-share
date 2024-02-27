@@ -7,7 +7,7 @@ const Location = async () => {
   // const divisions = await getDivisions();
   // console.log(divisions);
   return (
-    <div>
+    <div className="pt-20">
       <LocationTable />
       <Divisions />
     </div>
