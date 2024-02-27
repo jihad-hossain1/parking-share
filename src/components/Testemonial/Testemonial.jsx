@@ -23,7 +23,7 @@ function Testemonial() {
   return (
     <div className="w-full">
       <div
-        className="w-full h-[550px] md:h-[500px] lg:h-[500px] group"
+        className="w-full h-[550px] md:h-[500px] lg:h-[500px] group bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${image.src})` }}
       >
         <div className="pt-10 md:pt-24 lg:pt-28">

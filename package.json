@@ -21,6 +21,7 @@
     "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.0.6",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "keen-slider": "^6.8.6",

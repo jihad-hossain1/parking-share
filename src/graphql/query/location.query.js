@@ -14,12 +14,18 @@ const GET_DIVISIONS = gql`
 
 const GET_DIVISION = gql`
   #graphql
-  query division($id: ID!) {
-    division(id: $id) {
+  query division($name: String!) {
+    division(name: $name) {
       id
       name
       about
-      name
+      image
+      districts{
+        id
+         image
+         name
+         bn_name
+       }
     }
   }
 `;
