@@ -13,11 +13,11 @@ const HomePage = () => {
                   <Banner />
                   <Slogan />
                   <PropertyType />
-                  <Sponsors />
-                  <Testemonial />
                   <AllDivisions />
                   <OurTeam />
-                  <ContactUs />
+                  <Testemonial />
+                  <Sponsors />
+                  {/* <ContactUs /> */}
             </>);
 };
 

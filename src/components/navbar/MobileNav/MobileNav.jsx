@@ -34,7 +34,7 @@ const MobileNav = () => {
 
       </div>
       <ul
-        className={`md:flex md:items-center gap-10 md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] top-9 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out ${openNav ? "top-2 opacity-100 bg-white lg:bg-none w-full h-auto rounded mx-auto" : "top-[-5px] md:opacity-100 opacity-0"
+        className={`md:flex md:items-center gap-10 md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] top-9 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out ${openNav ? "top-2 opacity-100 lg:bg-none w-full h-auto rounded mx-auto" : "top-[-5px] md:opacity-100 opacity-0"
           }`}
       >
         {navList.map((menu, index) => (
