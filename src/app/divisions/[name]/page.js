@@ -75,7 +75,7 @@ const District = ({ params }) => {
                   <p>{district.bn_name}</p>
                 </div>
                 <div className="mt-5 ml-auto">
-                    <button>View Detail</button>
+                  <button>View Detail</button>
                 </div>
               </div>
             </div>
