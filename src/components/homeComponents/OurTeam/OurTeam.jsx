@@ -1,85 +1,67 @@
-"use client";
 import Image from "next/image";
-import React, { useState } from "react";
-import {
-  motion,
-  useTransform,
-  AnimatePresence,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
-export function OurTeam({
-    items,
-}) {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-    const springConfig = { stiffness: 100, damping: 5 };
-    const x = useMotionValue(0); // going to set this value on mouse move
-
-    // rotate the tooltip
-    const rotate = useSpring(
-        useTransform(x, [-100, 100], [-45, 45]),
-        springConfig
-    );
-    // translate the tooltip
-    const translateX = useSpring(
-        useTransform(x, [-100, 100], [-50, 50]),
-        springConfig
-    );
-    const handleMouseMove = (event) => {
-        const halfWidth = event.target.offsetWidth / 2;
-        x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
-    };
-
-    return (
-        <>
-            {items.map((item, idx) => (
-                <div
-                    className="-mr-4  relative group"
-                    key={item.name}
-                    onMouseEnter={() => setHoveredIndex(item.id)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                >
-                    <AnimatePresence mode="wait">
-                        {hoveredIndex === item.id && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 20, scale: 0.6 }}
-                                animate={{
-                                    opacity: 1,
-                                    y: 0,
-                                    scale: 1,
-                                    transition: {
-                                        type: "spring",
-                                        stiffness: 260,
-                                        damping: 10,
-                                    },
-                                }}
-                                exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                                style={{
-                                    translateX: translateX,
-                                    rotate: rotate,
-                                    whiteSpace: "nowrap",
-                                }}
-                                className="absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
-                            >
-                                <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
-                                <div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
-                                <div className="font-bold text-white relative z-30 text-base">
-                                    {item.name}
-                                </div>
-                                <div className="text-white text-xs">{item.designation}</div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                    <Image
-                        onMouseMove={handleMouseMove}
-                        height={100}
-                        width={100}
-                        src={item.image}
-                        alt={item.name}
-                        className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500" />
+function OurTeam() {
+  return (
+    <div className="grid lg:grid-cols-3 md:grid-cols-3 gap-5">
+      {Members.map((member, indx) => (
+        <div key={indx} className="relative w-[400px] mx-auto">
+          <div className="group">
+            <Image
+              src={member.image}
+              alt={member.name}
+              width={400}
+              height={300}
+              className="rounded-xl transition-opacity duration-300 ease-in-out group-hover:opacity-75"
+            />
+            <div className="opacity-0 group-hover:opacity-100 absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white rounded-xl transition-all duration-500 h-[400px]">
+              <div className="text-center p-4">
+                <div className="text-2xl font-bold mb-2">{member.designation}</div>
+                <div className="text-lg text-gray-300 mb-4">{member.name}</div>
+                <div className="flex justify-center mt-4 space-x-4">
+                  <a href="#" className="text-white">
+                    <FaFacebook className="text-xl" />
+                  </a>
+                  <a href="#" className="text-white">
+                    <FaTwitter className="text-xl" />
+                  </a>
+                  <a href="#" className="text-white">
+                    <FaLinkedin className="text-xl" />
+                  </a>
                 </div>
-            ))}
-        </>
-    );
+              </div>
+            </div>
+          </div>
+          <p>{member.name}</p>
+          <p className="text-sm text-gray-600 mt-4">{member.bio}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
+
+export default OurTeam;
+
+const Members = [
+  {
+    id: 3,
+    name: "Nahid Ahmmed",
+    designation: "Front-End Developer",
+    bio: "Experienced front-end developer with expertise in React.js and responsive web design.",
+    image: "https://i.ibb.co/2gW4Cv2/2148859448.jpg",
+  },
+  {
+    id: 4,
+    name: "Robin Hosain",
+    designation: "Front-End Developer",
+    bio: "Passionate about creating intuitive user experiences with a focus on performance optimization.",
+    image: "https://i.ibb.co/qRbv48f/2148029483.jpg",
+  },
+  {
+    id: 5,
+    name: "Jihad hoosain",
+    designation: "Back-End Developer",
+    bio: "Backend developer skilled in Node.js, Express.js, and MongoDB for building scalable APIs.",
+    image: "https://i.ibb.co/WKGrmX9/255.jpg",
+  },
+];

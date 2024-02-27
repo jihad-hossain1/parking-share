@@ -35,7 +35,7 @@ const District = ({ params }) => {
         <Image
           src={data.division.image}
           alt={data.division.name}
-          width={300}
+          width={4000}
           height={300}
           className="w-full h-[480px] object-cover"
         ></Image>
