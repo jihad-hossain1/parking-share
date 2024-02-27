@@ -9,16 +9,17 @@ import ContactUs from "./contactUs/page";
 
 const HomePage = () => {
       return (
-            <>
-                  <Banner />
-                  <Slogan />
+        <>
+          <Banner />
+          {/* <Slogan />
                   <PropertyType />
                   <Sponsors />
                   <Testemonial />
                   <AllDivisions />
                   <OurTeam />
-                  <ContactUs />
-            </>);
+                  <ContactUs /> */}
+        </>
+      );
 };
 
 export default HomePage;

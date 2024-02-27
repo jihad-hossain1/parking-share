@@ -21,17 +21,25 @@ const bannerData = [
 
 const BannerCard = () => {
     return (
-        <div className='mt-20 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20 '>
+      <div className=" flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20 ">
+        {bannerData.map((content, index) => (
+          <div
+            key={index}
+            className="flex flow-row lg:flex-col justify-around lg:justify-center items-center gap-5 "
+          >
+            <Image
+              className="p-5 w-20  md:w-32   lg:w-36 h-auto md:h-48 lg:h-56 rounded-lg bg-white cursor-pointer"
+              src={content.img}
+              alt="images"
+            />
 
-            {bannerData.map((content, index) => (<div key={index} className='flex flow-row lg:flex-col justify-around lg:justify-center items-center gap-5 '>
-                <Image className='p-5 w-32 md:w-48 lg:w-56 h-auto md:h-48 lg:h-56 rounded-lg bg-white cursor-pointer' src={content.img} alt='images' />
-
-                <div className='flex flex-col text-left lg:text-center'>
-                    <h1 className='text-2xl font-bold'>{content?.title}</h1>
-                    <span>{content?.sub}</span>
-                </div>
-            </div>))}
-        </div>
+            <div className="flex flex-col text-left lg:text-center">
+              <h1 className="text-2xl font-bold">{content?.title}</h1>
+              <span>{content?.sub}</span>
+            </div>
+          </div>
+        ))}
+      </div>
     );
 };
 
