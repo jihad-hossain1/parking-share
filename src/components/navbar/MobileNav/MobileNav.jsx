@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Link from "next/link";
-import { ThemeSwitchButton } from "../themeSwitch/ThemeSwitchButton";
+// import { ThemeSwitchButton } from "../themeSwitch/ThemeSwitchButton";
 import UserAccount from "../account/UserAccount";
 import { GiSplitCross } from "react-icons/gi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -40,7 +40,7 @@ const MobileNav = () => {
         {navList.map((menu, index) => (
           <li className="my-10 lg:my-0 font-bold text-black lg:text-white" key={index}>{menu}</li>
         ))}
-        <ThemeSwitchButton />
+        {/* <ThemeSwitchButton /> */}
         <UserAccount />
       </ul>
     </>
