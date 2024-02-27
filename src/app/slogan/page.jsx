@@ -11,13 +11,13 @@ const sloganData = [
 ]
 const Slogan = () => {
     return (
-        <div className='container mx-auto my-10 flex flex-col lg:flex-row gap-5'>
+        <div className='container mx-auto mt-64 flex flex-col lg:flex-row gap-5'>
             {sloganData.map((data, index) => (
-                <div key={index} className='flex justify-center px-2 items-center gap-5 h-48 w-full border rounded hover:bg-purple-500 transition-all duration-500 ease-in-out'>
-                    <div className='text-5xl'>{data?.icon}</div>
-                    <div className='flex flex-col '>
-                        <span className='text-2xl font-bold'>{data?.title}</span>
-                        <span className='text-gray-400'>{data?.description}</span>
+                <div key={index} className='flex justify-center px-2 items-center gap-5 h-48 w-full rounded hover:bg-[#9290C3] bg-gray-200 transition-all duration-500 ease-in-out cursor-pointer group'>
+                    <div className='text-5xl group-hover:text-white'>{data?.icon}</div>
+                    <div className='flex flex-col group-hover:text-white'>
+                        <span className='text-2xl font-bold '>{data?.title}</span>
+                        <span>{data?.description}</span>
                     </div>
 
                 </div>))}

@@ -29,11 +29,11 @@ const propertyData = [
 const PropertyType = () => {
     return (
         <>
-            <h1 className='text-4xl text-center'>SELECT THE PROPERTY TYPE</h1>
+            <h1 className='text-4xl text-center my-6'>SELECT THE PROPERTY TYPE</h1>
             <div className='container mx-auto flex flex-col lg:flex-row justify-around items-center gap-5'>
                 {propertyData.map((property, index) => (
-                    <div key={index} className='cursor-pointer group flex flex-col text-center items-center h-52 w-52 my-10 bg-purple-300 text-black hover:bg-purple-500 rounded transition-all duration-500 ease-in-out p-5 '>
-                        <span className='text-5xl bg-gray-500 group-hover:bg-white transition-all duration-500 ease-in-out rounded-full p-8  flex items-center h-3/4'>{property?.icon}</span>
+                    <div key={index} className='cursor-pointer group flex flex-col text-center items-center h-52 w-52 my-10 rounded hover:bg-[#9290C3] bg-gray-200 transition-all duration-500 ease-in-out cursor-pointer group p-5 '>
+                        <span className='text-5xl bg-[#535C91] group-hover:bg-white rounded-full p-8  flex items-center text-white group-hover:text-black h-3/4'>{property?.icon}</span>
                         <span className='mt-1.5 font-semibold h-full'>{property?.parkingAria}</span>
                     </div>))}
             </div>
