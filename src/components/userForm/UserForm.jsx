@@ -20,7 +20,9 @@ const UserForm = () => {
     username,
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
     if (email == "") {
       return toast("email are required");
     } else if (password == "") {
@@ -44,7 +46,7 @@ const UserForm = () => {
     }
   };
   return (
-    <section className="">
+    <>
       <div className=" items-center px-5 py-12 lg:px-20 shadow-md ">
         <div className="flex flex-col w-full max-w-md p-10 mx-auto my-6 transition duration-500 ease-in-out transform bg-white rounded-lg md:mt-0 border border-inherit">
           <div>
@@ -131,7 +133,7 @@ const UserForm = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
