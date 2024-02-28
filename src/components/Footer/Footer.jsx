@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="w-full bg-[#474E68] text-white">
       <div className="max-w-screen-xl mx-auto text-center">
-        <p className="text-3xl pt-20">
+        <p className="text-3xl pt-20 lg:w-full md:w-full w-[90%] mx-auto">
           Join our parking revolution and be up to date with the coming changes!
         </p>
         <div className="lg:flex md:flex lg:mx-auto md:mx-auto w-full lg:w-[30%] md:w-[30%] h-10 mt-14">
@@ -20,7 +20,7 @@ export default function Footer() {
             SubsCribe
           </button>
         </div>
-        <p className="lg:text-3xl md:text-3xl text-3xl mt-20 md:mt-3 lg:mt3  mx-auto">You can unsubscribe at any time you want</p>
+        <p className="lg:text-3xl md:text-3xl text-3xl mt-20 md:mt-3 lg:mt3  md:w-full w-[90%] mx-auto">You can unsubscribe at any time you want</p>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 pt-16 md:pt-16 lg:pt-16 gap-6">
           <div className="text-left mx-auto">
             <h1 className="text-xl font-bold">Home</h1>
