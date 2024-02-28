@@ -26,19 +26,12 @@ export default function RootLayout({ children }) {
           fontSans.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          // enableSystem
-          disableTransitionOnChange
-        >
-          <AuthProvider>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-            <Toaster />
-          </AuthProvider>
-        </ThemeProvider>
+        <AuthProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

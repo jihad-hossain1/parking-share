@@ -19,31 +19,31 @@ const UserAccount = () => {
         <DropdownMenuTrigger>
           <PiUserCircleLight className="text-[20px] text-white mt-2 lg:text-[32px]" />
         </DropdownMenuTrigger>
-        <div className="bg-white text-blue font-bold">
-          <DropdownMenuContent align="end">
-            {status === "authenticated" ? (
-              <>
-                <DropdownMenuItem>
-                  <Link href={"/dashboard"}>Dashboard</Link>
-                </DropdownMenuItem>
 
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => signOut()}>
-                  Logout
-                </DropdownMenuItem>
-              </>
-            ) : (
-              <>
-                <DropdownMenuItem>
-                  <a href="/login">Login</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <a href="/login/register">Register</a>
-                </DropdownMenuItem>
-              </>
-            )}
-          </DropdownMenuContent>
-        </div>
+        <DropdownMenuContent align="end">
+          {status === "authenticated" ? (
+            <div className="bg-zinc-100 rounded-md shadow flex flex-col gap-2 items-end py-1">
+              <DropdownMenuItem>
+                <a href="#">Profile</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href={"/dashboard"}>Dashboard</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => signOut()}>
+                Logout
+              </DropdownMenuItem>
+            </div>
+          ) : (
+            <div className="bg-zinc-100 rounded-md shadow flex flex-col gap-2 items-end py-1">
+              <DropdownMenuItem>
+                <a href="/login">Login</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/login/register">Register</a>
+              </DropdownMenuItem>
+            </div>
+          )}
+        </DropdownMenuContent>
       </DropdownMenu>
     </div>
   );

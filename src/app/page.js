@@ -11,13 +11,13 @@ const HomePage = () => {
       return (
         <>
           <Banner />
-          {/* <Slogan />
-                  <PropertyType />
-                  <Sponsors />
-                  <Testemonial />
-                  <AllDivisions />
-                  <OurTeam />
-                  <ContactUs /> */}
+          <Slogan />
+          <PropertyType />
+          <Sponsors />
+          {/* <Testemonial /> */}
+          <AllDivisions />
+          <OurTeam />
+          <ContactUs />
         </>
       );
 };

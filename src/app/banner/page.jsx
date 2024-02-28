@@ -1,7 +1,7 @@
 import React from 'react';
 import BannerContent from './bannerContent/page';
 import BannerCard from './bannerCard/page';
-// import vid from '@../../../public/video.webm';
+// import vid from "../../../public/video.webm";
 
 const Banner = () => {
     return (
