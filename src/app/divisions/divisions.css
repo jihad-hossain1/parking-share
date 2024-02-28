@@ -469,4 +469,50 @@
     }
   }
   
+
+  .View_btn {
+    --color: #5a08b8;
+    display: inline-block;
+    width: 100px;
+    height: 2.6em;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid;
+    transition: color .5s;
+    z-index: 1;
+    font-size: 13px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+   }
+   
+   .View_btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+   }
+   
+   .View_btn:hover {
+    color: #fff;
+   }
+   
+   .View_btn:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   .View_btn:hover:before {
+    top: -30px;
+    left: -30px;
+   }
+   
+   .View_btn:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+   }
   

@@ -31,7 +31,7 @@ const District = ({ params }) => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="pt-14 relative ">
+      <div className="relative ">
         <Image
           src={data.division.image}
           alt={data.division.name}
@@ -42,21 +42,21 @@ const District = ({ params }) => {
         <div className="absolute text-center top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-30 p-4">
           <p
             to="/"
-            className="absolute top-24 left-4 bg-black bg-opacity-30 text-white px-4 py-2 rounded-full"
+            className="absolute top-16 left-4 bg-black bg-opacity-30 text-white px-4 py-2 rounded-full"
           >
             Home {" > "}
             <span className="text-gray-400">{data.division.name}</span>
           </p>
 
-          <h1 className="text-2xl sm:text-4xl mt-24 mb-2 w-[80%]">
+          <h1 className="text-4xl mt-10 mb-2 w-[60%]">
             {data.division.name}
           </h1>
-          <p className="text-base sm:text-lg w-[80%]">{data.division.about}</p>
+          <p className="text-base sm:text-lg w-[60%]">{data.division.about}</p>
         </div>
       </div>
       <div>
-        <h1 className="text-center text-5xl my-24">Relative Districts</h1>
-        <div className="grid lg:grid-cols-5 md:grid-cols-4 mx-10 gap-5">
+        <h1 className="text-center lg:text-5xl md:text-5xl text-4xl mt-24">Relative Districts</h1>
+        <div className="grid lg:grid-cols-4 md:grid-cols-4 mx-[10%] gap-5 mb-24 mt-10">
           {data.division.districts.map((district, indx) => (
             <div key={indx} className="mx-auto p-5 rounded-lg shadow-lg">
               <Image
@@ -67,15 +67,14 @@ const District = ({ params }) => {
                 alt={district.name}
                 width={300}
                 height={300}
-                className="rounded-t-md"
+                className="rounded-md"
               ></Image>
               <div className="flex">
-                <div>
-                  <p>{district.name}</p>
-                  <p>{district.bn_name}</p>
+                <div className="mt-5">
+                  <p className="text-lg">{district.bn_name}</p>
                 </div>
                 <div className="mt-5 ml-auto">
-                  <button>View Detail</button>
+                  <button className="View_btn text-sm">View Detail</button>
                 </div>
               </div>
             </div>

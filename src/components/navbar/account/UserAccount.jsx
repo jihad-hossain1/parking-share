@@ -24,21 +24,21 @@ const UserAccount = () => {
             {status === "authenticated" ? (
               <>
                 <DropdownMenuItem>
-                  <Link href={"/dashboard"}>Dashboard</Link>
+                  <Link className="text-white" href={"/dashboard"}>Dashboard</Link>
                 </DropdownMenuItem>
 
                 <DropdownMenuItem>Profile</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => signOut()}>
-                  Logout
+                 <p className="text-white"> Logout</p>
                 </DropdownMenuItem>
               </>
             ) : (
               <>
                 <DropdownMenuItem>
-                  <a href="/login">Login</a>
+                  <a className="text-white" href="/login">Login</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <a href="/login/register">Register</a>
+                  <a className="text-white"  href="/login/register">Register</a>
                 </DropdownMenuItem>
               </>
             )}

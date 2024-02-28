@@ -26,8 +26,9 @@ const AllDivisions = () => {
   const { data, loading, error } = useQuery(GET_DIVISIONS) || {};
   return (
     <div className="container mx-auto">
-      <h1 className="text-4xl font-bold mb-4">Bangladesh Parking Districts</h1>
-      <div className="container mx-auto px-4 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      
+      <p className="text-center my-[8%] lg:text-5xl md:text-5xl text-3xl font-light lg:w-full md:w-full w-[80%] mx-auto">Bangladesh Our Parking Districts</p>
+      <div className="container mx-auto px-4 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {loading ? (
           [1, 2, 3, 4, 5, 6, 7, 8].map((ite, ind) => (
             <div
@@ -40,18 +41,16 @@ const AllDivisions = () => {
         ) : (
           data?.divisions?.map((district, index) => (
             <Link key={index} href={`/divisions/${district?.name}`}>
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300 ease-in-out transform group">
                 <Image
                   src={district?.image || ""}
                   alt={district?.name}
                   width={300}
-                  height={200}
-                  layout="responsive"
-                  objectFit="cover"
-                  className="w-full h-48 object-cover"
+                  height={300}
+                  className="w-full h-[250px] object-cover"
                 />
                 <div className="p-4">
-                  <h2 className="text-2xl font-semibold">{district.name}</h2>
+                  <h2 className="text-2xl font-semibold group-hover:text-blue-700">{district.name}</h2>
                   <p className="text-gray-600">
                     Total Parking Lots: {district?.totalParkingLots || 34}
                   </p>
