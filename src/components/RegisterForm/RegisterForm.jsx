@@ -8,6 +8,10 @@ import { toast } from "sonner";
 import axios from "axios";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
+import Image from "next/image";
+import { FaEnvelope, FaEye, FaFacebook, FaGoogle, FaLock, FaUser } from "react-icons/fa";
+import image from "../../../public/login-bg-img.jpg";
+import "./RegisterForm.css"
 
 const RegisterForm = () => {
   const [fullname, setfullname] = useState("");
@@ -47,7 +51,7 @@ const RegisterForm = () => {
   };
   return (
     <section className="">
-      <div className=" items-center px-5 py-12 lg:px-20 shadow-md ">
+      {/* <div className=" items-center px-5 py-12 lg:px-20 shadow-md ">
         <div className="flex flex-col w-full max-w-md p-10 mx-auto my-6 transition duration-500 ease-in-out transform bg-white rounded-lg md:mt-0 border border-inherit">
           <div>
             <h2 className="mt-6 text-3xl font-extrabold text-neutral-600">
@@ -164,7 +168,7 @@ const RegisterForm = () => {
                     </Link>
                   </div>
                 </div>
-                {/* <p className="text-red-500">{error}</p> */}
+                <p className="text-red-500">{error}</p>
                 <div>
                   <button
                     type="submit"
@@ -198,6 +202,92 @@ const RegisterForm = () => {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div> */}
+      <div className="relative">
+        <Image
+          src={image}
+          alt={"login background image"}
+          width={3000}
+          height={300}
+          className="w-full h-[880px] object-cover"
+        />
+
+        <div className="w-full px-3 mx-auto pt-44 md:flex-0 shrink-0 absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-40">
+          <div className="relative w-full md:w-[45%] lg:w-[40%] xl:w-[30%] mx-auto z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+            <form className="form" onSubmit={handleRegister}>
+              <div className="flex-column">
+                <label>User Name</label>
+              </div>
+              <div className="inputForm">
+                <FaUser />
+                <input
+                  className="input"
+                  value={username}
+                  onChange={(e) => setusername(e.target.value)}
+                  type="text"
+                  
+                  required=""
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              <div className="flex-column">
+                <label>Email </label>
+              </div>
+              <div className="inputForm">
+                <FaEnvelope />
+                <input
+                  className="input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                  autoComplete="current-password"
+                  required=""
+                  placeholder="Enter your Email"
+                />
+              </div>
+
+              <div className="flex-column">
+                <label>Password </label>
+              </div>
+              <div className="inputForm">
+                <FaLock />
+                <input
+                  type="password"
+                  className="input"
+                  placeholder="Enter your Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <FaEye />
+              </div>
+
+              <div className="flex-row">
+                <div>
+                  <input type="checkbox" />
+                  <label className="ml-2">Remember me </label>
+                </div>
+                <span className="span">Forgot password?</span>
+              </div>
+              <button className="button-submit">Sign Up</button>
+              <p className="p">
+              already have an account ? <span className="span">Sign In</span>
+              </p>
+              <p className="p line">Or With</p>
+
+              <div className="flex-row">
+                <button className="btn google" type="submit"
+                  onClick={() => signIn("google")} >
+                  <FaGoogle />
+                  Google
+                </button>
+                <button className="btn apple">
+                  <FaFacebook />
+                  Facebook
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

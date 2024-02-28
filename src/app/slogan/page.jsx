@@ -11,7 +11,7 @@ const sloganData = [
 ]
 const Slogan = () => {
     return (
-        <div className='container mx-auto my-10 flex flex-col lg:flex-row gap-5'>
+        <div className='container mx-auto my-[5%] flex flex-col lg:flex-row gap-5'>
             {sloganData.map((data, index) => (
                 <div key={index} className='flex justify-center px-2 items-center gap-5 h-48 w-full rounded hover:bg-[#40A2D8] shadow-lg transition-all duration-500 ease-in-out cursor-pointer group'>
                     <div className='text-5xl group-hover:text-white mx-5'>{data?.icon}</div>

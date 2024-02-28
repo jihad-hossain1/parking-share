@@ -4,7 +4,7 @@ import UserForm from "@/components/userForm/UserForm";
 
 const LoginPage = () => {
   return (
-    <main className="pt-10">
+    <main>
       <UserForm />
     </main>
   );
