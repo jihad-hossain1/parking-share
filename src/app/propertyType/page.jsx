@@ -7,7 +7,6 @@ import { SlPlane } from "react-icons/sl";
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { TbBuildingBank } from "react-icons/tb";
 
-
 const propertyData = [
     { parkingAria: "OFFICE SPACE PARKING", icon: <RiHomeOfficeLine /> },
     { parkingAria: "PARKING LOTS", icon: <LuParkingCircle /> },
