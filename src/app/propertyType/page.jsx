@@ -21,12 +21,13 @@ const propertyData = [
 const PropertyType = () => {
     return (
         <>
-            <h1 className='text-4xl text-center mt-[8%] mb-10'>SELECT THE PROPERTY TYPE</h1>
+            {/* <h1 className='text-4xl text-center mt-[8%] mb-10'>SELECT THE PROPERTY TYPE</h1> */}
+            <p className="text-center mt-[8%] mb-10 lg:text-5xl md:text-5xl text-3xl font-normal lg:w-full md:w-full w-[80%] mx-auto"><span className="text-[#4CB9E7]">SELECT</span> THE <span className="text-[#4CB9E7]">PROPERTY</span> TYPE</p>
             <div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                 {propertyData.map((property, index) => (
                     <div key={index} className='group cursor-pointer flex flex-col items-center p-6 bg-gray-100 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-200 border-2'>
-                        <span className='text-4xl bg-blue-500 text-white rounded-full p-4 mb-4 group-hover:bg-white group-hover:text-blue-500'>{property?.icon}</span>
-                        <span className='font-semibold text-lg text-gray-800 group-hover:text-blue-500'>{property?.parkingAria}</span>
+                        <span className='text-4xl bg-blue-500 text-white rounded-full p-4 mb-4 group-hover:bg-white group-hover:text-blue-500 transition duration-300 ease-in-out'>{property?.icon}</span>
+                        <span className='font-semibold text-lg text-gray-800 group-hover:text-blue-500 transition duration-300 ease-in-out'>{property?.parkingAria}</span>
                     </div>
                 ))}
             </div>
